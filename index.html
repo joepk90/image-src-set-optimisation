@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Image Source Set Optimisation</title>
 
     <style>
 
@@ -16,10 +17,9 @@
 
         .responsive-image {
             width:100%;
-            display: block;
         }
 
-        @media only screen and (min-width: 300px) {
+        @media only screen and (min-width: 400px) {
             .responsive-image {
                     width: 50%;
                 }
@@ -30,88 +30,120 @@
 </head>
 <body>
 
-<p>The following image has 3 sources, one for each pixel ratio (x1, x2, x3). The image size has been modified in an attempt to control what image image is shown at a ertain screen size using a certian Device Pixel Ratio. However the browser is doing it's own calculations and increasing the immage further</p>
+    <main>
 
+        <div class="container">
+            <div class="row">
+                <p class="">View the images at the following media queries to see the effect: 100px, 200px, 300px, 400px</p>
+            </div>
+        </div>
+       
 
+        <div class="container">
+            <div class="row">
 
-        <picture>
-            <source
-                media="(-webkit-min-device-pixel-ratio: 3)"
-                srcset="https://via.placeholder.com/300.jpg 100w,
-                https://via.placeholder.com/600.jpg 200w,
-                https://via.placeholder.com/900.jpg 300w,
-                https://via.placeholder.com/1200.jpg 400w,
-                https://via.placeholder.com/1500.jpg 500w,
-                https://via.placeholder.com/1800.jpg 600w,
-                https://via.placeholder.com/2100.jpg 700w,
-                https://via.placeholder.com/2400.jpg 800w,
-                https://via.placeholder.com/2700.jpg 900w,
-                https://via.placeholder.com/3000.jpg 1000w,
-                https://via.placeholder.com/3300.jpg 1100w,
-                https://via.placeholder.com/3600.jpg 1200w"
-                sizes="(100vw, min-width: 300px) 50vw"
-                type="image/jpg">
-            
-            <source
-                media="(-webkit-min-device-pixel-ratio: 2)"
-                srcset="https://via.placeholder.com/200.jpg 100w,
-                https://via.placeholder.com/400.jpg 200w,
-                https://via.placeholder.com/600.jpg 300w,
-                https://via.placeholder.com/800.jpg 400w,
-                https://via.placeholder.com/1000.jpg 500w,
-                https://via.placeholder.com/1200.jpg 600w,
-                https://via.placeholder.com/1400.jpg 700w,
-                https://via.placeholder.com/1600.jpg 800w,
-                https://via.placeholder.com/1800.jpg 900w,
-                https://via.placeholder.com/2000.jpg 1000w,
-                https://via.placeholder.com/2200.jpg 1100w,
-                https://via.placeholder.com/2400.jpg 1200w"
-                sizes="(100vw, min-width: 300px) 50vw"
-                type="image/jpg">
-            
-            <source
-                media="(-webkit-min-device-pixel-ratio: 1)"
-                srcset="https://via.placeholder.com/100.jpg 100w,
-                https://via.placeholder.com/200.jpg 200w,
-                https://via.placeholder.com/300.jpg 300w,
-                https://via.placeholder.com/400.jpg 400w,
-                https://via.placeholder.com/500.jpg 500w,
-                https://via.placeholder.com/600.jpg 600w,
-                https://via.placeholder.com/700.jpg 700w,
-                https://via.placeholder.com/800.jpg 800w,
-                https://via.placeholder.com/900.jpg 900w,
-                https://via.placeholder.com/1000.jpg 1000w,
-                https://via.placeholder.com/1100.jpg 1100w,
-                https://via.placeholder.com/1200.jpg 1200w"
-                sizes="(100vw, min-width: 300px) 50vw"
-                type="image/jpg">
+                <h6 class="">For complete control of device width, pixel densities and image formats, the following setup can be used.</h6>
 
-            <img class="responsive-image" src="https://via.placeholder.com/100.jpg" alt="sample image">
-        </picture>
+                <picture>
 
-        <hr>
+                    <!-- images for devices of 400px upwards, handling both pixel densities and alternative image formats -->
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/1200.webp" type="image/webp">
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/600.webp" type="image/webp"> 
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/1200.jpg" type="image/jpg">
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/600.jpg" type="image/jpg"> 
+                    <source media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/300.jpg" type="image/jpg">
+                    
 
-        <p>The following image uses the has one source and relies on the browser to use the correct image size: size/pixel density</p>
+                    <!-- images for devices of 300px upwards, handling both pixel densities and alternative image formats -->
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/1200.webp" type="image/webp">
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/800.webp" type="image/webp"> 
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/400.webp" type="image/webp">
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/1200.jpg" type="image/jpg">
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/800.jpg" type="image/jpg"> 
+                    <source media="(min-width: 300px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/400.jpg" type="image/jpg">
+                    
 
-        <picture>
-            <source
-                srcset="https://via.placeholder.com/100.jpg 100w,
-                https://via.placeholder.com/200.jpg 200w,
-                https://via.placeholder.com/300.jpg 300w,
-                https://via.placeholder.com/400.jpg 400w,
-                https://via.placeholder.com/500.jpg 500w,
-                https://via.placeholder.com/600.jpg 600w,
-                https://via.placeholder.com/700.jpg 700w,
-                https://via.placeholder.com/800.jpg 800w,
-                https://via.placeholder.com/900.jpg 900w,
-                https://via.placeholder.com/1000.jpg 1000w,
-                https://via.placeholder.com/1100.jpg 1100w,
-                https://via.placeholder.com/1200.jpg 1200w"
-                sizes="(100vw, min-width: 300px) 50vw"
-                type="image/jpg">
+                    <!-- images for devices of 200px upwards, handling both pixel densities and alternative image formats -->
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/900.webp" type="image/webp">
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/600.webp" type="image/webp"> 
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/900.jpg" type="image/jpg">
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/600.jpg" type="image/jpg"> 
+                    <source media="(min-width: 200px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/300.jpg" type="image/jpg">
+                    
 
-            <img class="responsive-image" src="https://via.placeholder.com/100.jpg" alt="sample image">
-        </picture>
+                    <!-- images for devices of 100px upwards, handling both pixel densities and alternative image formats -->
+                    <source media="(min-width: 100px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                    <source media="((min-width: 100px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/200.webp" type="image/webp"> 
+                    <source media="(min-width: 100px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/100.webp" type="image/webp">
+                    <source media="(min-width: 100px) and (-webkit-min-device-pixel-ratio: 3)" srcset="https://via.placeholder.com/300.jpg" type="image/jpg">
+                    <source media="((min-width: 100px) and (-webkit-min-device-pixel-ratio: 2)" srcset="https://via.placeholder.com/200.jpg" type="image/jpg"> 
+                    <source media="(min-width: 100px) and (-webkit-min-device-pixel-ratio: 1)" srcset="https://via.placeholder.com/100.jpg" type="image/jpg">
+                
+                    <img src="https://via.placeholder.com/100.jpg" class="responsive-image">
+                </picture>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+        
+
+        <div class="container">
+            <div class="row">
+
+                <h6>For a simpler setup, relying on the browser to use the correct image size/pixel density, the following image setup can be used. </h6>
+
+                <picture>
+                    <source
+                        srcset="https://via.placeholder.com/100.webp 100w,
+                        https://via.placeholder.com/200.webp 200w,
+                        https://via.placeholder.com/300.webp 300w,
+                        https://via.placeholder.com/400.webp 400w,
+                        https://via.placeholder.com/500.webp 500w,
+                        https://via.placeholder.com/600.webp 600w,
+                        https://via.placeholder.com/700.webp 700w,
+                        https://via.placeholder.com/800.webp 800w,
+                        https://via.placeholder.com/900.webp 900w,
+                        https://via.placeholder.com/1000.webp 1000w,
+                        https://via.placeholder.com/1100.webp 1100w,
+                        https://via.placeholder.com/1200.jwebppg 1200w"
+                        sizes="(100vw, min-width: 400px) 50vw"
+                        type="image/webp">
+
+                    <source
+                        srcset="https://via.placeholder.com/100.jpg 100w,
+                        https://via.placeholder.com/200.jpg 200w,
+                        https://via.placeholder.com/300.jpg 300w,
+                        https://via.placeholder.com/400.jpg 400w,
+                        https://via.placeholder.com/500.jpg 500w,
+                        https://via.placeholder.com/600.jpg 600w,
+                        https://via.placeholder.com/700.jpg 700w,
+                        https://via.placeholder.com/800.jpg 800w,
+                        https://via.placeholder.com/900.jpg 900w,
+                        https://via.placeholder.com/1000.jpg 1000w,
+                        https://via.placeholder.com/1100.jpg 1100w,
+                        https://via.placeholder.com/1200.jpg 1200w"
+                        sizes="(100vw, min-width: 400px) 50vw"
+                        type="image/jpg">
+
+                    <img class="responsive-image" src="https://via.placeholder.com/100.jpg" alt="sample image">
+                </picture> 
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <p>To see the source code <a href="ttps://github.com/joepk90/image-src-set-optimisation/blob/main/index.html">click here</a>.</p>
+            </div>
+        </div>
+
+    </main>
 
 </body>
 </html>
