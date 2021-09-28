@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Image Source Set Optimisation</title>
+
+    <style>
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .responsive-image {
+            width:100%;
+        }
+
+        @media only screen and (min-width: 400px) {
+            .responsive-image {
+                    width: 50%;
+                }
+            }
+
+    </style>
+
+<script>
+    var isFastNetwork = navigator.connection.downlink > 2;
+    
+        function updatePreviousImageSource() {
+            var currentSource = document.currentScript.previousElementSibling;
+            if (isFastNetwork === false) return;
+            currentSource.srcset = currentSource.dataset.srcset;
+        }
+    
+      </script>
+
+</head>
+<body>
+
+    <main>
+
+        <div class="container">
+            <div class="row">
+
+                <h6 class="">For complete control of device width, pixel densities, image formats and network conditions, the following setup can be used.</h6>
+
+                <picture>
+                    <!-- images for devices of 400px upwards, handling pixel densities and the webp image format -->
+                    <source media="(min-width: 400px) and (min-resolution: 3x)" data-srcset="https://via.placeholder.com/1200.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 400px) and (min-resolution: 2x)" data-srcset="https://via.placeholder.com/600.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 400px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                
+                    <!-- images for devices of 400px upwards, handling pixel densities and the jpg image format -->
+                    <source media="(min-width: 400px) and (min-resolution: 3x)" data-srcset="https://picsum.photos/1200/1200.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 400px) and (min-resolution: 2x)" data-srcset="https://picsum.photos/600/600.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 400px) and (min-resolution: 1x)" srcset="https://picsum.photos/300/300.jpg" type="image/jpg">
+                    
+                
+                    <!-- images for devices of 300px upwards, handling pixel densities and the webp image format -->
+                    <source media="(min-width: 300px) and (min-resolution: 3x)" data-srcset="https://via.placeholder.com/1200.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 300px) and (min-resolution: 2x)" data-srcset="https://via.placeholder.com/800.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 300px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/400.webp" type="image/webp">
+                
+                    <!-- images for devices of 300px upwards, handling pixel densities and the jpg image format -->
+                    <source media="(min-width: 300px) and (min-resolution: 3x)" data-srcset="https://picsum.photos/1200/1200.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 300px) and (min-resolution: 2x)" data-srcset="https://picsum.photos/800/800.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 300px) and (min-resolution: 1x)" srcset="https://picsum.photos/400/400.jpg" type="image/jpg">
+                    
+                
+                
+                    <!-- images for devices of 200px upwards, handling pixel densities and the webp image format -->
+                    <source media="(min-width: 200px) and (min-resolution: 3x)" data-srcset="https://via.placeholder.com/900.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 200px) and (min-resolution: 2x)" data-srcset="https://via.placeholder.com/600.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 200px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                
+                    <!-- images for devices of 200px upwards, handling pixel densities and the jpg image format -->
+                    <source media="(min-width: 200px) and (min-resolution: 3x)" data-srcset="https://picsum.photos/900/900.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 200px) and (min-resolution: 2x)" data-srcset="https://picsum.photos/600/600.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 200px) and (min-resolution: 1x)" srcset="https://picsum.photos/300/300.jpg" type="image/jpg">
+                    
+                
+                
+                    <!-- images for devices of 100px upwards, handling pixel densities and the webp image format -->
+                    <source media="(min-width: 100px) and (min-resolution: 3x)" data-srcset="https://via.placeholder.com/600.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 100px) and (min-resolution: 2x)" data-srcset="https://via.placeholder.com/400.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 100px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/200.webp" type="image/webp">
+                
+                    <!-- images for devices of 100px upwards, handling pixel densities and the jpg image format -->
+                    <source media="(min-width: 100px) and (min-resolution: 3x)" data-srcset="https://picsum.photos/600/600.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 100px) and (min-resolution: 2x)" data-srcset="https://picsum.photos/400/400.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-width: 100px) and (min-resolution: 1x)" srcset="https://picsum.photos/200/200.jpg" type="image/jpg">
+                
+                
+                
+                    <!-- images for devices of 00px upwards, handling pixel densities and the webp image format -->
+                    <source media="(min-resolution: 3x)" data-srcset="https://via.placeholder.com/300.webp" type="image/webp">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-resolution: 2x)" data-srcset="https://via.placeholder.com/200.webp" type="image/webp"> 
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-resolution: 1x)" srcset="https://via.placeholder.com/100.webp" type="image/webp">
+                    
+                    <!-- images for devices of 00px upwards, handling pixel densities and the jpg image format -->
+                    <source media="(min-resolution: 3x)" data-srcset="https://picsum.photos/300/300.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                
+                    <source media="(min-resolution: 2x)" data-srcset="https://picsum.photos/200/200.jpg" type="image/jpg">
+                    <script>updatePreviousImageSource();</script>
+                    
+                    <source media="(min-resolution: 1x)" srcset="https://picsum.photos/100/100.jpg" type="image/jpg">
+                
+                    <img src="https://picsum.photos/100/100.jpg" class="responsive-image">
+                </picture>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+</html>
