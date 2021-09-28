@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Image Source Set Optimisation</title>
 
     <style>
@@ -39,78 +38,42 @@
         <div class="container">
             <div class="row">
 
-                <h6 class="">For complete control of device width, pixel densities, image formats and network conditions, the following setup can be used.</h6>
+                <h6 class="">The following image controls of device width and pixel densities and network conditions. Alternative image formats could also easily be incorperated.</h6>
 
                 <picture>
-
-                    <!-- images for devices of 400px upwards, handling pixel densities and the webp image format -->
-                    <script>
-                    if (isFastNetwork) {document.write('<source media="(min-width: 400px) and (min-resolution: 3x)" srcset="https://via.placeholder.com/1200.webp" type="image/webp"><source media="(min-width: 400px) and (min-resolution: 2x)" srcset="https://via.placeholder.com/600.webp" type="image/webp">')}
-                    </script>
-                    <source media="(min-width: 400px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
          
                     <!-- images for devices of 400px upwards, handling pixel densities and the jpg image format -->
                     <script>
-                    if (isFastNetwork) {document.write('<source media="(min-width: 400px) and (min-resolution: 3x)" srcset="https://picsum.photos/1200/1200.jpg" type="image/jpg"><source media="(min-width: 400px) and (min-resolution: 2x)" srcset="https://picsum.photos/600/600.jpg" type="image/jpg">')}
+                    if (isFastNetwork) {document.write('<source media="(min-width: 400px) and (min-resolution: 3x)" srcset="https://placeimg.com/1200/1200/any" type="image/jpg"><source media="(min-width: 400px) and (min-resolution: 2x)" srcset="https://placeimg.com/600/600/any" type="image/jpg">')}
                     </script>
-                    <source media="(min-width: 400px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/300.jpg" type="image/jpg">
-                    
-
-                    <!-- images for devices of 300px upwards, handling pixel densities and the webp image format -->
-                    <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 300px) and (min-resolution: 3x)" srcset="https://via.placeholder.com/1200.webp" type="image/webp"><source media="(min-width: 300px) and (min-resolution: 2x)" srcset="https://via.placeholder.com/800.webp" type="image/webp">')}
-                    </script>
-                    <source media="(min-width: 300px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/400.webp" type="image/webp">
+                    <source media="(min-width: 400px) and (min-resolution: 1x)" srcset="https://placeimg.com/300/300/any" type="image/jpg">
               
                     <!-- images for devices of 300px upwards, handling pixel densities and the jpg image format -->
                     <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 300px) and (min-resolution: 3x)" srcset="https://picsum.photos/1200/1200.jpg" type="image/jpg"><source media="(min-width: 300px) and (min-resolution: 2x)" srcset="https://picsum.photos/800/800.jpg" type="image/jpg">')}
+                        if (isFastNetwork) {document.write('<source media="(min-width: 300px) and (min-resolution: 3x)" srcset="https://placeimg.com/1200/1200/any" type="image/jpg"><source media="(min-width: 300px) and (min-resolution: 2x)" srcset="https://placeimg.com/800/800/any" type="image/jpg">')}
                     </script>
-                    <source media="(min-width: 300px) and (min-resolution: 1x)" srcset="https://picsum.photos/400/400.jpg" type="image/jpg">
-                    
+                    <source media="(min-width: 300px) and (min-resolution: 1x)" srcset="https://placeimg.com/400/400/any" type="image/jpg">
 
-
-                    <!-- images for devices of 200px upwards, handling pixel densities and the webp image format -->
-                    <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 200px) and (min-resolution: 3x)" srcset="https://via.placeholder.com/900.webp" type="image/webp"><source media="(min-width: 200px) and (min-resolution: 2x)" srcset="https://via.placeholder.com/600.webp" type="image/webp">')}
-                    </script>
-                    <source media="(min-width: 200px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/300.webp" type="image/webp">
-   
                     <!-- images for devices of 200px upwards, handling pixel densities and the jpg image format -->
                     <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 200px) and (min-resolution: 3x)" srcset="https://picsum.photos/900/900.jpg" type="image/jpg"><source media="(min-width: 200px) and (min-resolution: 2x)" srcset="https://picsum.photos/600/600.jpg" type="image/jpg">')}
+                        if (isFastNetwork) {document.write('<source media="(min-width: 200px) and (min-resolution: 3x)" srcset="https://placeimg.com/900/900/any" type="image/jpg"><source media="(min-width: 200px) and (min-resolution: 2x)" srcset="https://placeimg.com/600/600/any" type="image/jpg">')}
                     </script>
-                    <source media="(min-width: 200px) and (min-resolution: 1x)" srcset="https://picsum.photos/300/300.jpg" type="image/jpg">
-                    
-
-
-                    <!-- images for devices of 100px upwards, handling pixel densities and the webp image format -->
-                    <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 100px) and (min-resolution: 3x)" srcset="https://via.placeholder.com/600.webp" type="image/webp"><source media="(min-width: 100px) and (min-resolution: 2x)" srcset="https://via.placeholder.com/400.webp" type="image/webp">')}
-                    </script>
-                    <source media="(min-width: 100px) and (min-resolution: 1x)" srcset="https://via.placeholder.com/200.webp" type="image/webp">
+                    <source media="(min-width: 200px) and (min-resolution: 1x)" srcset="https://placeimg.com/300/300/any" type="image/jpg">
       
                     <!-- images for devices of 100px upwards, handling pixel densities and the jpg image format -->
                     <script>
-                        if (isFastNetwork) {document.write('<source media="(min-width: 100px) and (min-resolution: 3x)" srcset="https://picsum.photos/600/600.jpg" type="image/jpg"><source media="(min-width: 100px) and (min-resolution: 2x)" srcset="https://picsum.photos/400/400.jpg" type="image/jpg">')}
+                        if (isFastNetwork) {document.write('<source media="(min-width: 100px) and (min-resolution: 3x)" srcset="https://placeimg.com/600/60/any" type="image/jpg"><source media="(min-width: 100px) and (min-resolution: 2x)" srcset="https://placeimg.com/400/400/any" type="image/jpg">')}
                     </script>
-                    <source media="(min-width: 100px) and (min-resolution: 1x)" srcset="https://picsum.photos/200/200.jpg" type="image/jpg">
+                    <source media="(min-width: 100px) and (min-resolution: 1x)" srcset="https://placeimg.com/200/200/any" type="image/jpg">
 
-
-
-                    <!-- images for devices of 00px upwards, handling pixel densities and the webp image format -->
-                    <script>
-                        if (isFastNetwork) {document.write('<source media="(min-resolution: 3x)" srcset="https://via.placeholder.com/300.webp" type="image/webp"><source media="(min-resolution: 2x)" srcset="https://via.placeholder.com/200.webp" type="image/webp">')}
-                    </script>
-                    <source media="(min-resolution: 1x)" srcset="https://via.placeholder.com/100.webp" type="image/webp">
                     
                     <!-- images for devices of 00px upwards, handling pixel densities and the jpg image format -->
                     <script>
-                        if (isFastNetwork) {document.write('<source media="(min-resolution: 3x)" srcset="https://picsum.photos/300/300.jpg" type="image/jpg"><source media="(min-resolution: 2x)" srcset="https://picsum.photos/200/200.jpg" type="image/jpg">')}
+                        if (isFastNetwork) {document.write('<source media="(min-resolution: 3x)" srcset="https://placeimg.com/300/300/any" type="image/jpg"><source media="(min-resolution: 2x)" srcset="https://placeimg.com/200/200/any" type="image/jpg">')}
                     </script>
-                    <source media="(min-resolution: 1x)" srcset="https://picsum.photos/100/100.jpg" type="image/jpg">
+                    <source media="(min-resolution: 1x)" srcset="https://placeimg.com/100/100/any" type="image/jpg">
                 
-                    <img src="https://via.placeholder.com/100.jpg" class="responsive-image">
+                    <img class="responsive-image">
                 </picture>
             </div>
         </div>
